@@ -1,0 +1,114 @@
+{
+    "Errors":[
+
+    { "_category": "UNSUPPORTED SCENARIOS ERRORS 1XXX", "Code" : 0, "Msg" : ""},
+
+        { "_category": "PURITY RELATED ERRORS", "Code" : 0, "Msg" : ""},
+            { "Code" : 1001, "Msg" : "Rest API Version Not Supported! Please update to the latest Purity Version.", "ShortName":"UnsupportedRestVersion" },
+
+        { "_category": "DISK RELATED ERRORS", "Code" : 0, "Msg" : ""},
+            { "Code" : 1100, "Msg" : "Disk has multiple partitions.", "ShortName":"MultiPartitions" },
+            { "Code" : 1101, "Msg" : "Mounted disk has multiple partitions.", "ShortName":"MultiPartitionsMounted" },
+            { "Code" : 1102, "Msg" : "Unsupported path format: {0}", "ShortName":"UnsupportedPathFormat" },
+            { "Code" : 1103, "Msg" : "Unsupported disk type {0}", "ShortName":"UnsupportedDiskType"},
+            { "Code" : 1104, "Msg" : "This is not a Pure Storage FlashArray vVol disk", "ShortName":"NotAPureVVOL" },
+            { "Code" : 1105, "Msg" : "This is not a vVol-based hard disk.", "ShortName":"NotAVVOL" },
+
+        { "_category": "VOLSET RELATED ERRORS", "Code" : 0, "Msg" : ""},
+            { "Code" : 1200, "Msg" : "Mixed volume sets cannot be processed together", "ShortName":"MixedVolSets" },
+
+        { "_category": "SDK POLICY ERRORS", "Code" : 0, "Msg" : ""},
+            { "Code" : 1300, "Msg" : "Cannot delete snapshot(s) created outside the SDK.", "ShortName":"CantDelNonSDKSnaps" },
+
+
+
+    { "_category": "USER ERRORS 3XXX", "Code" : 0, "Msg" : ""},
+
+        { "_category": "NAME REQUIREMENTS ERRORS", "Code" : 0, "Msg" : ""},
+            { "Code" : 3001, "Msg" : "{0} cannot have '#'. Please use a different {0}: {1}", "ShortName":"BadDelimeter" },
+            { "Code" : 3002, "Msg" : "Invalid {0} ({1}). {0} must be between 1 and 63 characters (alphanumeric and '-') in length and begin and end with a letter or number. {0} must include at least one letter or '-'", "ShortName":"PurityNameRequirements" },
+            { "Code" : 3003, "Msg" : "Volume Name Too Long", "ShortName":"VolNameTooLong" },
+        
+        { "_category": "OBJECT ALREADY EXISTS ERRORS", "Code" : 0, "Msg" : ""},
+            { "Code" : 3100, "Msg" : "Protection group name {0} is already in use. Pick a different name.", "ShortName":"PGAlreadyExists" },
+        
+        { "_category": "NOT FOUND ERRORS", "Code" : 0, "Msg" : ""},
+            { "Code" : 3200, "Msg" : "History [{0}] not found", "ShortName":"HistoryNotFound" },
+            { "Code" : 3201, "Msg" : "Mount point directory {0} does not exist.", "ShortName":"MPMissing" },
+            { "Code" : 3202, "Msg" : "VVol not found on entered FlashArrays.", "ShortName":"VVOLNotFound" },
+            { "Code" : 3203, "Msg" : "Protection Group {0} does not exist.", "ShortName":"PGMissing"},
+            { "Code" : 3204, "Msg" : "Invalid History ID", "ShortName":"InvalidHistory" },
+            { "Code" : 3205, "Msg" : "Could not find a mount entry for Mount Id {0}", "ShortName":"InvalidMount" },
+            { "Code" : 3206, "Msg" : "Host with ports {0} not found in FA {1}. Please connect and try again.", "ShortName":"HostNotFound"},
+        
+        { "_category": "MISSING INPUT ERRORS", "Code" : 0, "Msg" : ""},
+            { "Code" : 3300, "Msg" : "Please provide credentials for {0} ", "ShortName":"MissingCreds" },
+            { "Code" : 3301, "Msg" : "Please either pass in one or more FlashArray connections or create connections via the New-PfaConnection cmdlet.", "ShortName":"MissingFAConnection" },
+            { "Code" : 3302, "Msg" : "Computer credential must be specified.", "ShortName":"MissingComputerCreds" },
+            { "Code" : 3303, "Msg" : "VCenterCredential must be specified." , "ShortName":"MissingVcenterCreds"},
+            { "Code" : 3304, "Msg" : "VMName or PersistentId must be specified.", "ShortName":"MissingVMNameOrID" },
+            { "Code" : 3305, "Msg" : "You must pass in a restClient.", "ShortName":"MissingRestClient" },
+            { "Code" : 3306, "Msg" : "FlashArray credential must be specified.", "ShortName":"MissingFACred" },
+
+        { "_category": "WRONG INPUT VALUES/COMBINATIONS ERRORS", "Code" : 0, "Msg" : ""},
+            { "Code" : 3400, "Msg" : "No matching pgroups were found for the volume set. Use the -CreatePgroup param or create a matching pgroup manually.", "ShortName":"NoPGForVolset" },
+            { "Code" : 3401, "Msg" : "Number of Paths ({0}) do not match number of disks to be mounted ({1}).", "ShortName":"PathCountMismatch" },
+            { "Code" : 3402, "Msg" : "Error! Invalid volume type. Volume type for {0} ({1}) does not match. ", "ShortName":"InvalidVolType" },
+            { "Code" : 3403, "Msg" : "Drive letter or mount point is invalid: {0}", "ShortName":"InvalidPath" },
+            { "Code" : 3404, "Msg" : "Drive letter or mount point is unavailable: {0}", "ShortName":"UnavailablePath" },
+            { "Code" : 3405, "Msg" : "No partitions with access paths found", "ShortName":"NoPartitionsFound" },
+            { "Code" : 3406, "Msg" : "Without a VCenter, VolumeType must be Physical", "ShortName":"NoVcenterSpecified" },
+            { "Code" : 3407, "Msg" : "With a VCenter, VolumeType must be RDM or VVOL", "ShortName":"vcenterForPhysical" },
+            { "Code" : 3408, "Msg" : "Protection Group {0} is missing the following volumes [ {1} ]. Add them to the protection group or select a different protection group.", "ShortName":"PgMissingVolumes" },
+            { "Code" : 3409, "Msg" : "Invalid vCenter credential. Please verify credentials and try again.", "ShortName":"InvalidVcenterCred" },
+            { "Code" : 3410, "Msg" : "'{0}' does not exist on the VCenter server {1}", "ShortName":"VmMissingOnVcenter" },
+            { "Code" : 3411, "Msg" : "Invalid computer credential. Please verify credentials and try again.", "ShortName":"InvalidComputerCred" },
+            { "Code" : 3412, "Msg" : "Could not connect to FlashArray. Please verify credentials and try again.", "ShortName":"CantConnectToFA" },
+            { "Code" : 3413, "Msg" : "Expecting single VM matching '{0}'. Found {1} matches: {2}", "ShortName":"TooManyVMMatchesOnVcenter" },
+            { "Code" : 3414, "Msg" : "Computer Session does not match Computer Address. Please verify session and try again.", "ShortName":"InvalidComputerSession" },
+
+        { "_category": "ABORTED ERRORS", "Code" : 0, "Msg" : ""},
+            { "Code" : 3500, "Msg" : "Operation cancelled by the user", "ShortName":"userAbort" },
+
+
+    { "_category": "FA RELATED ERRORS 5XXX", "Code" : 0, "Msg" : ""},
+    
+        { "_category": "TAG ERRORS", "Code" : 0, "Msg" : ""},
+            { "Code" : 5020, "Msg" : "Failed to set Metadata Tag", "ShortName":"FailToSetMetaTag" },
+            { "Code" : 5021, "Msg" : "Failed to set Mount Metadata Tag {0} to volume {1}", "ShortName":"FailToSetVolumeMetaTag" },
+            { "Code" : 5022, "Msg" : "Failed to set Mount IDs Tag", "ShortName":"FailToSetMountTag" },
+            { "Code" : 5023, "Msg" : "Environment information is too long to be stored on Tags: {0}", "ShortName":"EnvTagTooLong" },
+
+        { "_category": "GENERAL PURITY ERRORS", "Code" : 0, "Msg" : ""},
+            { "Code" : 5999, "Msg" : "Purity Error", "ShortName":"PurityError"},
+
+
+    { "_category": "VMWARE RELATED ERRORS 7XXX", "Code" : 0, "Msg" : ""},
+        { "Code" : 7003, "Msg" : "Failed to identify ESXi for VM '{0}' on Vcenter {1}", "ShortName":"IdentifyEsxiError" },
+        { "Code" : 7004, "Msg" : "Datastore {0} is of type {1} but it should be of Type (VMFS)", "ShortName":"WrongDatastoreType" },
+        { "Code" : 7005, "Msg" : "Failed to get Datastore for volume with serial number: {0}.", "ShortName":"DatastoreSerialNumberError" },
+        { "Code" : 7006, "Msg" : "VMDisk ExtensionData does not exist, {0}", "ShortName":"ExtentionDataMissing" },
+        { "Code" : 7007, "Msg" : "Failed to discover ESXi Name. Check access of VM '[0]' whithin vCenter [1], VM is '[2]'", "ShortName":"ESXINameDiscoveryError" },
+        { "Code" : 7008, "Msg" : "Please install PowerCLI.`r`n Install-Module -Name VMware.PowerCLI -Scope CurrentUser", "ShortName":"PowerCLIMissing" },
+        { "Code" : 7009, "Msg" : "PowerCLI failed to create new hard disk for VVOL Mount. Please try again.", "ShortName":"NewHardDiskError"},
+
+
+    { "_category": "UNEXPECTED ERRORS 9XXX", "Code" : 0, "Msg" : ""},
+
+        { "_category": "OBJECT NOT FOUND ERRORS", "Code" : 0, "Msg" : ""},
+            { "Code" : 9001, "Msg" : "ScsiLun cannot be found on {0}, {1}", "ShortName":"ScsiLunNotFound"},
+
+        { "_category": "INCONSISTENT DATA ERRORS", "Code" : 0, "Msg" : ""},
+            { "Code" : 9100, "Msg" : "Serial number [{0}] for disk on {1} in VM: {2} does not match mounted volumes [{3}]", "ShortName":"MountVolsSerialError" },
+            { "Code" : 9101, "Msg" : "Failed to dismount: Path field is null", "ShortName":"DismountPathNull" },
+            { "Code" : 9102, "Msg" : "Failed to dismount: History.Computer field is null", "ShortName":"DismountComputerNull" },
+            { "Code" : 9103, "Msg" : "Cannot parse snapshot name. Please delete snapshots manually", "ShortName":"CantParseSnapshot" },
+            { "Code" : 9104, "Msg" : "Failed to parse Metadata tag {0}", "ShortName":"CantParseMetaTag" },
+            { "Code" : 9105, "Msg" : "Could not parse Metadata for Mount Id {0}: {1}", "ShortName":"CantParseMountTag" },
+            { "Code" : 9106, "Msg" : "Different {0} on the same set: [{1}; {2}]", "ShortName":"InconsistentTags" },
+            { "Code" : 9107, "Msg" : "Volume set is not complete. Expected {0} resources. Found: {1}", "ShortName":"IncompleteVolSet" },
+
+        { "_category": "UNKNOWN ERRORS", "Code" : 0, "Msg" : ""},
+            { "Code" : 9999, "Msg" : "Unexpected Error", "ShortName":"UnexpectedError" }
+    ]
+}
